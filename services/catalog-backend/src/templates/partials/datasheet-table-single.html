@@ -1,0 +1,33 @@
+{% block %}
+<div class="row">
+    <div class="col mx-auto text-center mt-3">
+        <button class="btn btn-primary btn-block" type="button"
+                data-toggle="collapse"
+                role="button"
+                data-target="#datasheet_div"
+                aria-expanded="false"
+                aria-controls="datasheet_div">
+            DATASHEET (Show/Hide)
+        </button>
+        <div class="row collapse mt-3" id="datasheet_div">
+            <div class="col ml-1 mr-1 card text-center">
+                <table class="table table-bordered mt-3" style="width:100%">
+                    <tbody>
+                    <tr>
+                        <td><b>Attribute</b></td>
+                        <td><b>Value </b></td>
+                    </tr>
+                    {% for attribute in robot.get_attributes() %}
+                    <tr>
+                        <td><b> {{attribute.__str__()}} </b></td>
+                        <td> {{attribute.get_value()}}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
