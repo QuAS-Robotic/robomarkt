@@ -47,7 +47,7 @@ DATABASES = {
 }
 
 HASURA_PROXY_SETTINGS = APISettings({
-    'HOST': "http://localhost:8080/api/",
+    'HOST': "http://localhost:8080/",
     'AUTH': {
         'user': None,
         'password': None,
